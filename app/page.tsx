@@ -459,6 +459,7 @@ export default function GiftWebsite() {
                 src={selectedPhoto}
                 alt="Kenangan"
                 fill
+                sizes="100vw"
                 className="object-contain"
               />
             </div>
@@ -651,7 +652,8 @@ export default function GiftWebsite() {
                 </a>
 
                 <p className="self-center text-sm text-neutral-500">
-                  kalau embed-nya nggak kebuka di device tertentu, pakai tombol ini aja.
+                  kalau embed-nya nggak kebuka di device tertentu, pakai tombol
+                  ini aja.
                 </p>
               </div>
             </div>
@@ -710,7 +712,9 @@ export default function GiftWebsite() {
             <div
               className={`relative h-[520px] overflow-hidden rounded-[1.75rem] border border-neutral-200 bg-gradient-to-br ${currentScene.theme} transition-all duration-500`}
             >
-              <div className={isDarkScene ? "absolute inset-0 z-10 bg-black/25" : ""} />
+              <div
+                className={isDarkScene ? "absolute inset-0 z-10 bg-black/25" : ""}
+              />
 
               <div className="absolute left-6 top-6 z-20 rounded-full bg-white/90 px-4 py-2 text-xs uppercase tracking-[0.2em] text-rose-400 shadow-sm">
                 scene 0{storyStep + 1}
@@ -720,12 +724,15 @@ export default function GiftWebsite() {
                 {currentScene.subtitle}
               </div>
 
-              <div className={`absolute inset-0 z-0 ${sceneVisible ? "scene-in" : "scene-out"}`}>
+              <div
+                className={`absolute inset-0 z-0 ${sceneVisible ? "scene-in" : "scene-out"}`}
+              >
                 <div className="relative h-full w-full slow-zoom">
                   <Image
                     src={currentScene.image}
                     alt={currentScene.title}
                     fill
+                    sizes="(max-width: 768px) 100vw, 60vw"
                     className="object-cover"
                     priority
                   />
@@ -754,7 +761,8 @@ export default function GiftWebsite() {
 
               {storyStep === 7 && (
                 <div className="absolute inset-x-0 bottom-8 z-20 text-center text-sm font-medium text-emerald-700">
-                  aamiin for better timing, better versions, and a beautiful reunion.
+                  aamiin for better timing, better versions, and a beautiful
+                  reunion.
                 </div>
               )}
             </div>
@@ -824,6 +832,7 @@ export default function GiftWebsite() {
                   src={src}
                   alt={`Gallery photo ${index + 1}`}
                   fill
+                  sizes="(max-width: 768px) 50vw, 33vw"
                   className="object-cover"
                 />
               </div>
