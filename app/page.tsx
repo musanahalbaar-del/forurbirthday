@@ -28,7 +28,7 @@ export default function GiftWebsite() {
   const [sceneVisible, setSceneVisible] = useState(true);
 
   const introText =
-    "hey, this is a late little gift. aku tahu ini telat, but i still wanted to make something that feels warm, personal, and very you.";
+    "hey, this is a late little gift hehe. aku tahu ini agak telat banget, but i still wanted to make something that feels warm, personal, and memorable mungkin semoga hehe.";
 
   const galleryPhotos = useMemo(
     () => Array.from({ length: 15 }, (_, i) => `/gallery/${i + 1}.jpg`),
@@ -49,15 +49,15 @@ export default function GiftWebsite() {
     () => [
       {
         title: "It feels quiet",
-        text: "Bukan lagu yang rasanya mau bikin semuanya jadi besar. Lebih ke lagu yang duduk pelan di kepala, kayak seseorang yang masih kadang kepikiran tanpa dipanggil.",
+        text: "Bukan tipe lagu yang melebih lebihkan sesuatu atau terlalu dramatis malah lagu ini menurut aku paling nampar dengan cara paling halus. Lagu ini kayak menggambarkan kayak ada orang yang masih kepikiran tapi orangnya udah ga disamping kita lagi. ",
       },
       {
         title: "It feels familiar",
-        text: "Ada rasa dekat yang susah dijelasin, dan lagu ini punya rasa itu. Kayak sesuatu yang udah berubah, tapi jejaknya belum benar-benar pergi.",
+        text: "Lagu ini kayak bilang kalau ada sesuatu yang asing tapi terasa familiar banget.",
       },
       {
         title: "It feels honest",
-        text: "Aku pilih lagu ini bukan karena mau bikin semuanya sedih, tapi karena ini yang paling mirip sama cara aku nginget kamu: pelan, random, tapi nyata.",
+        text: "Aku pilih lagu ini bukan karena mau buat semuanya jadi sedih wkwk tapi menurut aku lagu ini paling jujur dalam menggambarkan apa yang aku rasa sampai sekarang.",
       },
     ],
     []
@@ -68,16 +68,16 @@ export default function GiftWebsite() {
       {
         title: "we met in high school",
         subtitle: "the first time life quietly introduced us.",
-        text: "semuanya mulai di masa sma. awalnya cuma dua orang yang kebetulan ada di tempat yang sama, belum tahu kalau nanti satu sama lain bakal jadi bagian penting dari cerita ini.",
+        text: "Semuanya mulai dari sma yaa hehe, dua orang yang bahkan sebenernya ga kenal dan aku cuman bisa liat kamu dari kejauhan dan ngomong ke jibril kalau kagum sama kamu(walau kamu gapercaya cerita ini)",
         image: "/story/1-sma.png",
         bubbleLeft: "so this is where it starts.",
         bubbleRight: "i didn’t know this would matter so much.",
         theme: "from-sky-100 via-white to-rose-50",
       },
       {
-        title: "one committee, one concert, one beginning",
+        title: "Langit Benderang, Konser pertama kita bareng, Awal mula semua makin dalam",
         subtitle: "we got closer because life kept putting us side by side.",
-        text: "karena satu kepanitiaan konser yang sama, kita jadi lebih sering ketemu, lebih sering ngobrol, dan pelan-pelan mulai saling kenal lebih dalam. dari yang awalnya biasa, semuanya mulai terasa beda.",
+        text: "Aku bersykur tuhan temuin kita dalam satu kejadian yang sangat kebetulan. Langit Benderang, kangen banget gasi sama acara ini? makasih yaa bawahan aku wkwkwk.",
         image: "/story/2-panitia-konser.png",
         bubbleLeft: "i like being here with you.",
         bubbleRight: "me too. more than i expected.",
@@ -86,7 +86,7 @@ export default function GiftWebsite() {
       {
         title: "then it became us",
         subtitle: "from quietly close to something real.",
-        text: "dari banyak momen kecil yang nggak terlalu heboh, hubungan ini akhirnya tumbuh jadi sesuatu yang nyata. pelan, tapi tulus. dan untuk beberapa waktu, itu terasa cukup.",
+        text: "Setelah agak lama dikit dan setelah mental ku terkumpul, aku beraniin diri buat nembah kamuu di GYMMMMM wkwkkwkw makasii udah mau sama aku walaupun harusnya alurnya kita jadian dulu baru konser yaa.",
         image: "/story/3-mulai-hubungan.png",
         bubbleLeft: "this feels special.",
         bubbleRight: "yeah… it really does.",
@@ -95,7 +95,7 @@ export default function GiftWebsite() {
       {
         title: "i graduated first",
         subtitle: "and life started moving faster for me.",
-        text: "karena aku senior, aku harus lulus duluan. setelah itu, hidup bawa aku masuk ke Poltek SSN. dari sini ritme hidup mulai berubah, dan jarak mulai pelan-pelan mengambil perannya sendiri.",
+        text: "karena aku lebih tua dikit, aku harus lulus duluan :(. setelah itu, hidup  ngebawa aku masuk ke Poltek SSN. dan dari sini ritme hidup mulai berubah, dan jarak mulai pelan-pelan ngambil perannya sendiri.",
         image: "/story/4-poltek-ssn.png",
         bubbleLeft: "you’re really moving forward.",
         bubbleRight: "i wish i could pause time a little.",
@@ -104,7 +104,7 @@ export default function GiftWebsite() {
       {
         title: "we learned how to stay close through a screen",
         subtitle: "distance changed the way we met each other.",
-        text: "karena kesibukan dan jarak, kita jadi lebih sering ketemu lewat video call. kadang singkat, kadang cuma sebentar, tapi tetap jadi cara buat saling hadir walau nggak di tempat yang sama.",
+        text: "karena kesibukan aku sihh dan jarak kita, kita jadi lebih sering ketemu hanya lewat video call. berat banget karena harus ngerubah kebiasaan kita yang dulu.",
         image: "/story/5-videocall.png",
         bubbleLeft: "can you hear me clearly?",
         bubbleRight: "clear enough to miss you more.",
@@ -113,7 +113,7 @@ export default function GiftWebsite() {
       {
         title: "then you graduated and went to toronto",
         subtitle: "the world asked even more from you.",
-        text: "setelah kamu lulus, kamu melanjutkan pendidikan ke Toronto, Canada. dari situ, jarak kita jadi makin jauh. bukan cuma tempat yang beda, tapi juga jam yang sering nggak sejalan.",
+        text: "HOREEE kamuu lulus dan keterima di Toronto, hal yang kamu cita citain dari dulu dengan beasiswa, aku bangga banget sama kamu. tapi aku sedih kita makin jauh T_T.",
         image: "/story/6-toronto.png",
         bubbleLeft: "i have to go farther now.",
         bubbleRight: "then go. i’ll still be proud of you.",
@@ -122,7 +122,7 @@ export default function GiftWebsite() {
       {
         title: "we had to focus on our own dreams",
         subtitle: "sometimes loving someone also means letting life happen.",
-        text: "akhirnya kita sama-sama harus fokus mengejar cita-cita. video call jadi makin singkat, waktu jadi makin susah dipertemukan, dan hidup seperti minta kita tumbuh masing-masing dulu sebelum bisa berharap lebih jauh.",
+        text: "akhirnya kita harus sama sama fokus buat ngejar mimpi kita masing-masing ya. Sakit, tapi aku udah percaya kok kalau ini mungkin bagian dari prosesnya, makasih selalu ngomong gitu ke aku wkwk.",
         image: "/story/7-mengejar-mimpi.png",
         bubbleLeft: "maybe this is how we grow.",
         bubbleRight: "even if it hurts.",
@@ -131,7 +131,7 @@ export default function GiftWebsite() {
       {
         title: "and maybe, one day",
         subtitle: "better timing, better versions of us.",
-        text: "aku masih nyimpen harapan itu dengan tenang. semoga suatu saat nanti, kita bisa bertemu lagi dalam posisi yang lebih baik, lebih sukses, lebih siap, dan lebih dewasa buat menjalani sesuatu yang baru. aamiin.",
+        text: "aku masih nyimpen harapan itu. semoga suatu saat nanti, kita bisa bertemu lagi dalam posisi yang lebih baik, lebih sukses, lebih siap, dan lebih dewasa buat menjalani sesuatu yang baru yaa,aamiin.",
         image: "/story/8-reunion.png",
         bubbleLeft: "meet me again someday.",
         bubbleRight: "i’ll keep that hope softly.",
@@ -390,8 +390,7 @@ export default function GiftWebsite() {
               <span className="animate-pulse">|</span>
             </h1>
             <p className="relative mt-6 max-w-2xl leading-7 text-neutral-300">
-              before you go in, press play ya. i wanted the first feeling of
-              this page to sound like something soft.
+              before you go in, press play ya. aku ada lagu buat nemenin kamu scroll webnya.
             </p>
 
             <div className="relative mt-8 flex flex-col gap-3 sm:flex-row">
@@ -500,7 +499,7 @@ export default function GiftWebsite() {
                   birthday wish
                 </p>
                 <h2 className="text-2xl font-semibold md:text-3xl">
-                  i hope this year feels gentler to you.
+                  Semoga tahun ini bawa banyak hal baik buat kamu.
                 </h2>
                 <p className="leading-7 text-neutral-700">
                   more calm. more good surprises. more moments where life feels
@@ -540,22 +539,22 @@ export default function GiftWebsite() {
               why i picked about you
             </p>
             <h2 className="text-3xl font-semibold md:text-4xl">
-              because it sounds like remembering someone softly.
+              because it sounds like remembering someone.
             </h2>
             <div className="mt-5 space-y-4 text-neutral-600">
               <p className="leading-7">
-                bukan tipe lagu yang terasa terlalu besar. it just feels close.
-                kayak perasaan yang datang diam-diam, terus duduk sebentar,
-                terus bikin kamu mikir ke orang yang sama lagi.
+                I chose About You bukan karena lagunya sedih banget, 
+                tapi karena rasanya familiar. It doesn’t try too hard, nggak terlalu loud, tapi tetap tinggal di kepala. 
+                Kayak perasaan yang datang pelan-pelan, terus tiba-tiba sadar… oh, ini tentang seseorang yang pernah berarti.
               </p>
               <p className="leading-7">
-                aku pilih lagu ini karena rasanya familiar. not because it’s
-                the saddest song ever, tapi karena cara dia tinggal itu mirip
-                sama beberapa hal tentang kamu di kepala aku.
+               Lagu ini juga punya vibe yang quiet, tapi bukan kosong. Lebih ke tenang, soft, dan jujur. 
+               It feels like remembering someone without forcing it, tanpa harus di dramatisir. 
+               Kadang cuma lewat potongan lirik atau nada, terus langsung keinget momen tertentu tanpa sengaja.
               </p>
               <p className="leading-7">
-                and maybe that’s the most honest reason. some people leave the
-                room, but the feeling of them doesn’t really rush to leave.
+                And maybe that’s why I picked this. Because it feels real. Nggak berisik, nggak berlebihan, tapi tetap ada. 
+                Kayak beberapa hal tentang kamu di kepala aku. Nnggak selalu muncul, tapi sekali datang, rasanya masih sama.
               </p>
             </div>
 
@@ -591,9 +590,9 @@ export default function GiftWebsite() {
                 i left the playlist here too.
               </h3>
               <p className="mt-3 leading-7 text-neutral-600">
-                aku bikin ini dari lama. maybe you never noticed, maybe that’s
-                okay. but i still wanted this page to keep it here, because some
-                songs say things better than people do.
+                btw, kalau kamu sadar aku buat satu playlist baru buat kamu.
+                kamu inget ga dulu aku suka banget buat playlist buat kamu, buat kita.
+                Terima ya ini playlist buat kita untuk sekarang, kalau engga terima yaudah anggap aja playlist aku buat kamu hehe
               </p>
 
               <div className="mt-5 overflow-hidden rounded-[1.5rem] border border-neutral-200 shadow-sm">
@@ -622,7 +621,7 @@ export default function GiftWebsite() {
                 </a>
 
                 <p className="self-center text-sm text-neutral-500">
-                  kalau embed-nya nggak kebuka di device tertentu, pakai tombol
+                  kalau nggak kebuka di device tertentu, pakai tombol
                   ini aja.
                 </p>
               </div>
@@ -894,8 +893,7 @@ export default function GiftWebsite() {
               if you have a message for the author, leave it here.
             </h2>
             <p className="mt-4 leading-7 text-neutral-600">
-              kalau kamu mau ngomong atau ngasih saran buat web ini, kirim aja langsung ke contact di
-              bawah ini.
+             Kalau kamu mau ngomong sesuatu atau mau komen soal web ini, feel free ya buat kontak aku lagi sapa tau lupa nomor aku hehe
             </p>
 
             <div className="mt-8 space-y-4">
