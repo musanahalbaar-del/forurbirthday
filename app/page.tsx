@@ -1,15 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { FormEvent, useEffect, useMemo, useRef, useState } from "react";
-import { supabase } from "@/lib/supabase";
-
-type WallMessage = {
-  id?: string;
-  name: string;
-  message: string;
-  created_at?: string;
-};
+import { useEffect, useMemo, useRef, useState } from "react";
 
 type StoryScene = {
   title: string;
@@ -31,13 +23,9 @@ export default function GiftWebsite() {
   const [typedText, setTypedText] = useState("");
   const [selectedPhoto, setSelectedPhoto] = useState<string | null>(null);
   const [envelopeOpen, setEnvelopeOpen] = useState(false);
-  const [visitorName, setVisitorName] = useState("");
-  const [visitorMessage, setVisitorMessage] = useState("");
-  const [wallMessages, setWallMessages] = useState<WallMessage[]>([]);
   const [storyStep, setStoryStep] = useState(0);
   const [autoPlayFilm, setAutoPlayFilm] = useState(false);
   const [sceneVisible, setSceneVisible] = useState(true);
-  const [sendingMessage, setSendingMessage] = useState(false);
 
   const introText =
     "hey, this is a late little gift. aku tahu ini telat, but i still wanted to make something that feels warm, personal, and very you.";
@@ -161,43 +149,8 @@ export default function GiftWebsite() {
     audio.volume = 0.35;
     audioRef.current = audio;
 
-    const fetchMessages = async () => {
-      const { data, error } = await supabase
-        .from("messages")
-        .select("*")
-        .order("created_at", { ascending: false });
-
-      if (!error && data) {
-        setWallMessages(data);
-      }
-    };
-
-    fetchMessages();
-
     return () => {
       audio.pause();
-    };
-  }, []);
-
-  useEffect(() => {
-    const channel = supabase
-      .channel("messages-realtime")
-      .on(
-        "postgres_changes",
-        { event: "INSERT", schema: "public", table: "messages" },
-        (payload) => {
-          const newMessage = payload.new as WallMessage;
-          setWallMessages((prev) => {
-            const exists = prev.some((item) => item.id === newMessage.id);
-            if (exists) return prev;
-            return [newMessage, ...prev].slice(0, 50);
-          });
-        }
-      )
-      .subscribe();
-
-    return () => {
-      supabase.removeChannel(channel);
     };
   }, []);
 
@@ -275,29 +228,6 @@ export default function GiftWebsite() {
 
   const goNextScene = () => {
     changeScene(Math.min(storyScenes.length - 1, storyStep + 1));
-  };
-
-  const handleSubmitMessage = async (e: FormEvent) => {
-    e.preventDefault();
-    if (!visitorName.trim() || !visitorMessage.trim()) return;
-
-    setSendingMessage(true);
-
-    const newMessage = {
-      name: visitorName.trim(),
-      message: visitorMessage.trim(),
-    };
-
-    const { error } = await supabase.from("messages").insert([newMessage]);
-
-    if (!error) {
-      setVisitorName("");
-      setVisitorMessage("");
-    } else {
-      alert("Pesan gagal dikirim. Cek policy Supabase atau koneksi internet.");
-    }
-
-    setSendingMessage(false);
   };
 
   const currentScene = storyScenes[storyStep];
@@ -961,72 +891,56 @@ export default function GiftWebsite() {
               leave a message for author
             </p>
             <h2 className="mt-3 text-3xl font-semibold md:text-4xl">
-              write something here.
+              if you have a message for the author, leave it here.
             </h2>
             <p className="mt-4 leading-7 text-neutral-600">
-              pesan yang ditulis di sini sekarang tersimpan online. jadi pesan
-              dari device lain juga bisa masuk, kebaca, dan muncul ke semua
-              orang yang buka halaman ini.
+              kalau kamu mau bilang sesuatu, kirim aja langsung ke contact di
+              bawah ini.
             </p>
 
-            <form onSubmit={handleSubmitMessage} className="mt-6 space-y-4">
-              <input
-                value={visitorName}
-                onChange={(e) => setVisitorName(e.target.value)}
-                placeholder="Your name"
-                className="w-full rounded-2xl border border-neutral-300 px-4 py-3 outline-none transition focus:border-rose-400"
-              />
-              <textarea
-                value={visitorMessage}
-                onChange={(e) => setVisitorMessage(e.target.value)}
-                placeholder="Leave your message..."
-                rows={4}
-                className="w-full rounded-2xl border border-neutral-300 px-4 py-3 outline-none transition focus:border-rose-400"
-              />
-              <button
-                type="submit"
-                disabled={sendingMessage}
-                className="rounded-2xl bg-rose-500 px-5 py-3 text-sm font-medium text-white shadow-lg transition hover:-translate-y-0.5 disabled:cursor-not-allowed disabled:opacity-70"
+            <div className="mt-8 space-y-4">
+              <a
+                href="https://wa.me/6281242939595"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center justify-between rounded-[1.5rem] border border-green-200 bg-green-50 px-5 py-4 transition hover:-translate-y-0.5 hover:shadow-md"
               >
-                {sendingMessage ? "Sending..." : "Send message"}
-              </button>
-            </form>
-          </div>
-        </div>
-
-        <div className="mt-6 rounded-[2rem] border border-neutral-200 bg-white p-8 shadow-sm">
-          <div className="flex items-center justify-between gap-4">
-            <div>
-              <p className="text-sm uppercase tracking-[0.2em] text-rose-400">
-                message wall
-              </p>
-              <h3 className="mt-2 text-2xl font-semibold">
-                messages i can read here
-              </h3>
-            </div>
-            <span className="rounded-full bg-rose-50 px-4 py-2 text-sm text-rose-500">
-              {wallMessages.length} saved
-            </span>
-          </div>
-
-          <div className="mt-6 grid gap-4 md:grid-cols-2">
-            {wallMessages.length === 0 ? (
-              <div className="rounded-2xl bg-neutral-50 p-5 text-neutral-500">
-                no messages yet. the first one can start here.
-              </div>
-            ) : (
-              wallMessages.map((item, index) => (
-                <div
-                  key={`${item.id ?? item.name}-${index}`}
-                  className="rounded-2xl bg-neutral-50 p-5"
-                >
-                  <p className="font-semibold text-neutral-800">{item.name}</p>
-                  <p className="mt-2 leading-7 text-neutral-600">
-                    {item.message}
+                <div>
+                  <p className="text-sm uppercase tracking-[0.2em] text-green-600">
+                    WhatsApp
+                  </p>
+                  <p className="mt-1 text-lg font-semibold text-neutral-800">
+                    081242939595
                   </p>
                 </div>
-              ))
-            )}
+                <span className="rounded-full bg-green-500 px-4 py-2 text-sm font-medium text-white">
+                  Chat now
+                </span>
+              </a>
+
+              <a
+                href="https://t.me/6281242939595"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center justify-between rounded-[1.5rem] border border-sky-200 bg-sky-50 px-5 py-4 transition hover:-translate-y-0.5 hover:shadow-md"
+              >
+                <div>
+                  <p className="text-sm uppercase tracking-[0.2em] text-sky-600">
+                    Telegram
+                  </p>
+                  <p className="mt-1 text-lg font-semibold text-neutral-800">
+                    081242939595
+                  </p>
+                </div>
+                <span className="rounded-full bg-sky-500 px-4 py-2 text-sm font-medium text-white">
+                  Open
+                </span>
+              </a>
+            </div>
+
+            <div className="mt-6 rounded-2xl bg-neutral-50 p-4 text-sm leading-7 text-neutral-500">
+              thank you for stopping by this little page.
+            </div>
           </div>
         </div>
       </section>
