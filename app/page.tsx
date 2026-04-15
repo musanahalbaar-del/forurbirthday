@@ -894,7 +894,7 @@ export default function GiftWebsite() {
               if you have a message for the author, leave it here.
             </h2>
             <p className="mt-4 leading-7 text-neutral-600">
-              kalau kamu mau bilang sesuatu, kirim aja langsung ke contact di
+              kalau kamu mau ngomong atau ngasih saran buat web ini, kirim aja langsung ke contact di
               bawah ini.
             </p>
 
