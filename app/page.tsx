@@ -2,10 +2,13 @@
 
 import Image from "next/image";
 import { FormEvent, useEffect, useMemo, useRef, useState } from "react";
+import { supabase } from "@/lib/supabase";
 
 type WallMessage = {
+  id?: string;
   name: string;
   message: string;
+  created_at?: string;
 };
 
 type StoryScene = {
@@ -34,6 +37,7 @@ export default function GiftWebsite() {
   const [storyStep, setStoryStep] = useState(0);
   const [autoPlayFilm, setAutoPlayFilm] = useState(false);
   const [sceneVisible, setSceneVisible] = useState(true);
+  const [sendingMessage, setSendingMessage] = useState(false);
 
   const introText =
     "hey, this is a late little gift. aku tahu ini telat, but i still wanted to make something that feels warm, personal, and very you.";
@@ -157,15 +161,43 @@ export default function GiftWebsite() {
     audio.volume = 0.35;
     audioRef.current = audio;
 
-    const saved = localStorage.getItem("gift-wall-messages");
-    if (saved) {
-      try {
-        setWallMessages(JSON.parse(saved) as WallMessage[]);
-      } catch {}
-    }
+    const fetchMessages = async () => {
+      const { data, error } = await supabase
+        .from("messages")
+        .select("*")
+        .order("created_at", { ascending: false });
+
+      if (!error && data) {
+        setWallMessages(data);
+      }
+    };
+
+    fetchMessages();
 
     return () => {
       audio.pause();
+    };
+  }, []);
+
+  useEffect(() => {
+    const channel = supabase
+      .channel("messages-realtime")
+      .on(
+        "postgres_changes",
+        { event: "INSERT", schema: "public", table: "messages" },
+        (payload) => {
+          const newMessage = payload.new as WallMessage;
+          setWallMessages((prev) => {
+            const exists = prev.some((item) => item.id === newMessage.id);
+            if (exists) return prev;
+            return [newMessage, ...prev].slice(0, 50);
+          });
+        }
+      )
+      .subscribe();
+
+    return () => {
+      supabase.removeChannel(channel);
     };
   }, []);
 
@@ -245,19 +277,27 @@ export default function GiftWebsite() {
     changeScene(Math.min(storyScenes.length - 1, storyStep + 1));
   };
 
-  const handleSubmitMessage = (e: FormEvent) => {
+  const handleSubmitMessage = async (e: FormEvent) => {
     e.preventDefault();
     if (!visitorName.trim() || !visitorMessage.trim()) return;
 
-    const updated = [
-      { name: visitorName.trim(), message: visitorMessage.trim() },
-      ...wallMessages,
-    ].slice(0, 12);
+    setSendingMessage(true);
 
-    setWallMessages(updated);
-    localStorage.setItem("gift-wall-messages", JSON.stringify(updated));
-    setVisitorName("");
-    setVisitorMessage("");
+    const newMessage = {
+      name: visitorName.trim(),
+      message: visitorMessage.trim(),
+    };
+
+    const { error } = await supabase.from("messages").insert([newMessage]);
+
+    if (!error) {
+      setVisitorName("");
+      setVisitorMessage("");
+    } else {
+      alert("Pesan gagal dikirim. Cek policy Supabase atau koneksi internet.");
+    }
+
+    setSendingMessage(false);
   };
 
   const currentScene = storyScenes[storyStep];
@@ -924,8 +964,9 @@ export default function GiftWebsite() {
               write something here.
             </h2>
             <p className="mt-4 leading-7 text-neutral-600">
-              pesan yang ditulis di sini bakal tersimpan di browser. jadi kamu
-              bisa lihat lagi message-message yang masuk di device yang sama.
+              pesan yang ditulis di sini sekarang tersimpan online. jadi pesan
+              dari device lain juga bisa masuk, kebaca, dan muncul ke semua
+              orang yang buka halaman ini.
             </p>
 
             <form onSubmit={handleSubmitMessage} className="mt-6 space-y-4">
@@ -944,9 +985,10 @@ export default function GiftWebsite() {
               />
               <button
                 type="submit"
-                className="rounded-2xl bg-rose-500 px-5 py-3 text-sm font-medium text-white shadow-lg transition hover:-translate-y-0.5"
+                disabled={sendingMessage}
+                className="rounded-2xl bg-rose-500 px-5 py-3 text-sm font-medium text-white shadow-lg transition hover:-translate-y-0.5 disabled:cursor-not-allowed disabled:opacity-70"
               >
-                Send message
+                {sendingMessage ? "Sending..." : "Send message"}
               </button>
             </form>
           </div>
@@ -975,7 +1017,7 @@ export default function GiftWebsite() {
             ) : (
               wallMessages.map((item, index) => (
                 <div
-                  key={`${item.name}-${index}`}
+                  key={`${item.id ?? item.name}-${index}`}
                   className="rounded-2xl bg-neutral-50 p-5"
                 >
                   <p className="font-semibold text-neutral-800">{item.name}</p>
