@@ -890,7 +890,7 @@ export default function GiftWebsite() {
               leave a message for author
             </p>
             <h2 className="mt-3 text-3xl font-semibold md:text-4xl">
-              if you have a message for the author, leave it here.
+              if you have a message buat aku, leave it here.
             </h2>
             <p className="mt-4 leading-7 text-neutral-600">
              Kalau kamu mau ngomong sesuatu atau mau komen soal web ini, feel free ya buat kontak aku lagi sapa tau lupa nomor aku hehe
