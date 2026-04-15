@@ -28,7 +28,7 @@ export default function GiftWebsite() {
   const [sceneVisible, setSceneVisible] = useState(true);
 
   const introText =
-    "hey, this is a late little gift hehe. aku tahu ini agak telat banget, but i still wanted to make something that feels warm, personal, and memorable mungkin semoga hehe.";
+    "hey, this is a late little gift hehe. aku tahu ini telat banget, but i still wanted to make something that feels warm, personal, and memorable for you.";
 
   const galleryPhotos = useMemo(
     () => Array.from({ length: 15 }, (_, i) => `/gallery/${i + 1}.jpg`),
@@ -49,15 +49,15 @@ export default function GiftWebsite() {
     () => [
       {
         title: "It feels quiet",
-        text: "Bukan tipe lagu yang melebih lebihkan sesuatu atau terlalu dramatis malah lagu ini menurut aku paling nampar dengan cara paling halus. Lagu ini kayak menggambarkan kayak ada orang yang masih kepikiran tapi orangnya udah ga disamping kita lagi. ",
+        text: "Bukan tipe lagu yang melebih-lebihkan sesuatu atau terlalu dramatis. Menurut aku, lagu ini justru paling nampar dengan cara yang paling halus. Rasanya kayak tentang seseorang yang masih kepikiran, padahal orangnya udah nggak ada di samping kita lagi.",
       },
       {
         title: "It feels familiar",
-        text: "Lagu ini kayak bilang kalau ada sesuatu yang asing tapi terasa familiar banget.",
+        text: "Lagu ini rasanya kayak bilang kalau ada sesuatu yang sebenarnya udah jauh, tapi tetap terasa familiar banget.",
       },
       {
         title: "It feels honest",
-        text: "Aku pilih lagu ini bukan karena mau buat semuanya jadi sedih wkwk tapi menurut aku lagu ini paling jujur dalam menggambarkan apa yang aku rasa sampai sekarang.",
+        text: "Aku pilih lagu ini bukan karena mau bikin semuanya jadi sedih wkwk, tapi karena menurut aku lagu ini paling jujur dalam menggambarkan apa yang aku rasa sampai sekarang.",
       },
     ],
     []
@@ -68,16 +68,16 @@ export default function GiftWebsite() {
       {
         title: "we met in high school",
         subtitle: "the first time life quietly introduced us.",
-        text: "Semuanya mulai dari sma yaa hehe, dua orang yang bahkan sebenernya ga kenal dan aku cuman bisa liat kamu dari kejauhan dan ngomong ke jibril kalau kagum sama kamu(walau kamu gapercaya cerita ini)",
+        text: "Semuanya mulai dari SMA yaa hehe. Dua orang yang bahkan awalnya nggak kenal, dan aku cuma bisa lihat kamu dari kejauhan sambil bilang ke Jibril kalau aku kagum sama kamu, walaupun kamu mungkin nggak percaya cerita ini.",
         image: "/story/1-sma.png",
         bubbleLeft: "so this is where it starts.",
         bubbleRight: "i didn’t know this would matter so much.",
         theme: "from-sky-100 via-white to-rose-50",
       },
       {
-        title: "Langit Benderang, Konser pertama kita bareng, Awal mula semua makin dalam",
+        title: "Langit Benderang, konser pertama kita bareng",
         subtitle: "we got closer because life kept putting us side by side.",
-        text: "Aku bersykur tuhan temuin kita dalam satu kejadian yang sangat kebetulan. Langit Benderang, kangen banget gasi sama acara ini? makasih yaa bawahan aku wkwkwk.",
+        text: "Aku bersyukur banget Tuhan nemuin kita di satu kejadian yang rasanya kebetulan tapi berharga. Langit Benderang. Kangen banget nggak sih sama acara ini? Makasih yaa, bawahan aku wkwkwk.",
         image: "/story/2-panitia-konser.png",
         bubbleLeft: "i like being here with you.",
         bubbleRight: "me too. more than i expected.",
@@ -86,7 +86,7 @@ export default function GiftWebsite() {
       {
         title: "then it became us",
         subtitle: "from quietly close to something real.",
-        text: "Setelah agak lama dikit dan setelah mental ku terkumpul, aku beraniin diri buat nembah kamuu di GYMMMMM wkwkkwkw makasii udah mau sama aku walaupun harusnya alurnya kita jadian dulu baru konser yaa.",
+        text: "Setelah agak lama, dan setelah mental aku bener-bener kekumpul, aku beraniin diri buat nembak kamu di gym wkwkwk. Makasih yaa udah mau sama aku, walaupun harusnya alurnya kita jadian dulu baru konser.",
         image: "/story/3-mulai-hubungan.png",
         bubbleLeft: "this feels special.",
         bubbleRight: "yeah… it really does.",
@@ -95,7 +95,7 @@ export default function GiftWebsite() {
       {
         title: "i graduated first",
         subtitle: "and life started moving faster for me.",
-        text: "karena aku lebih tua dikit, aku harus lulus duluan :(. setelah itu, hidup  ngebawa aku masuk ke Poltek SSN. dan dari sini ritme hidup mulai berubah, dan jarak mulai pelan-pelan ngambil perannya sendiri.",
+        text: "Karena aku lebih tua dikit, aku harus lulus duluan. Setelah itu, hidup ngebawa aku masuk ke Poltek SSN. Dari sini ritme hidup mulai berubah, dan jarak pelan-pelan mulai ngambil perannya sendiri.",
         image: "/story/4-poltek-ssn.png",
         bubbleLeft: "you’re really moving forward.",
         bubbleRight: "i wish i could pause time a little.",
@@ -104,7 +104,7 @@ export default function GiftWebsite() {
       {
         title: "we learned how to stay close through a screen",
         subtitle: "distance changed the way we met each other.",
-        text: "karena kesibukan aku sihh dan jarak kita, kita jadi lebih sering ketemu hanya lewat video call. berat banget karena harus ngerubah kebiasaan kita yang dulu.",
+        text: "Karena kesibukan aku dan jarak kita, kita jadi lebih sering ketemu cuma lewat video call. Berat banget, karena kita harus ngerubah kebiasaan yang dulu rasanya gampang jadi sesuatu yang jauh lebih susah.",
         image: "/story/5-videocall.png",
         bubbleLeft: "can you hear me clearly?",
         bubbleRight: "clear enough to miss you more.",
@@ -113,7 +113,7 @@ export default function GiftWebsite() {
       {
         title: "then you graduated and went to toronto",
         subtitle: "the world asked even more from you.",
-        text: "HOREEE kamuu lulus dan keterima di Toronto, hal yang kamu cita citain dari dulu dengan beasiswa, aku bangga banget sama kamu. tapi aku sedih kita makin jauh T_T.",
+        text: "Horeee, kamu lulus dan keterima di Toronto. Hal yang kamu cita-citain dari dulu, apalagi dengan beasiswa. Aku bangga banget sama kamu. Tapi di saat yang sama, aku juga sedih karena kita jadi makin jauh.",
         image: "/story/6-toronto.png",
         bubbleLeft: "i have to go farther now.",
         bubbleRight: "then go. i’ll still be proud of you.",
@@ -122,7 +122,7 @@ export default function GiftWebsite() {
       {
         title: "we had to focus on our own dreams",
         subtitle: "sometimes loving someone also means letting life happen.",
-        text: "akhirnya kita harus sama sama fokus buat ngejar mimpi kita masing-masing ya. Sakit, tapi aku udah percaya kok kalau ini mungkin bagian dari prosesnya, makasih selalu ngomong gitu ke aku wkwk.",
+        text: "Akhirnya kita harus sama-sama fokus buat ngejar mimpi kita masing-masing. Sakit, tapi aku udah percaya kalau ini mungkin memang bagian dari prosesnya. Makasih ya, kamu dulu sering bilang kayak gitu ke aku.",
         image: "/story/7-mengejar-mimpi.png",
         bubbleLeft: "maybe this is how we grow.",
         bubbleRight: "even if it hurts.",
@@ -131,7 +131,7 @@ export default function GiftWebsite() {
       {
         title: "and maybe, one day",
         subtitle: "better timing, better versions of us.",
-        text: "aku masih nyimpen harapan itu. semoga suatu saat nanti, kita bisa bertemu lagi dalam posisi yang lebih baik, lebih sukses, lebih siap, dan lebih dewasa buat menjalani sesuatu yang baru yaa,aamiin.",
+        text: "Aku masih nyimpen harapan itu. Semoga suatu saat nanti kita bisa ketemu lagi dalam posisi yang lebih baik, lebih sukses, lebih siap, dan lebih dewasa buat jalanin sesuatu yang baru. Aamiin.",
         image: "/story/8-reunion.png",
         bubbleLeft: "meet me again someday.",
         bubbleRight: "i’ll keep that hope softly.",
@@ -390,7 +390,8 @@ export default function GiftWebsite() {
               <span className="animate-pulse">|</span>
             </h1>
             <p className="relative mt-6 max-w-2xl leading-7 text-neutral-300">
-              before you go in, press play ya. aku ada lagu buat nemenin kamu scroll webnya.
+              before you go in, press play ya. aku ada lagu buat nemenin kamu
+              scroll webnya.
             </p>
 
             <div className="relative mt-8 flex flex-col gap-3 sm:flex-row">
@@ -499,7 +500,7 @@ export default function GiftWebsite() {
                   birthday wish
                 </p>
                 <h2 className="text-2xl font-semibold md:text-3xl">
-                  Semoga tahun ini bawa banyak hal baik buat kamu.
+                  semoga tahun ini bawa banyak hal baik buat kamu.
                 </h2>
                 <p className="leading-7 text-neutral-700">
                   more calm. more good surprises. more moments where life feels
@@ -541,20 +542,27 @@ export default function GiftWebsite() {
             <h2 className="text-3xl font-semibold md:text-4xl">
               because it sounds like remembering someone.
             </h2>
+
             <div className="mt-5 space-y-4 text-neutral-600">
               <p className="leading-7">
-                I chose About You bukan karena lagunya sedih banget, 
-                tapi karena rasanya familiar. It doesn’t try too hard, nggak terlalu loud, tapi tetap tinggal di kepala. 
-                Kayak perasaan yang datang pelan-pelan, terus tiba-tiba sadar… oh, ini tentang seseorang yang pernah berarti.
+                I chose About You bukan karena lagunya sedih banget, tapi karena
+                rasanya familiar. It doesn’t try too hard, nggak terlalu loud,
+                tapi tetap tinggal di kepala. Kayak perasaan yang datang
+                pelan-pelan, terus tiba-tiba sadar… oh, ini tentang seseorang
+                yang pernah berarti.
               </p>
               <p className="leading-7">
-               Lagu ini juga punya vibe yang quiet, tapi bukan kosong. Lebih ke tenang, soft, dan jujur. 
-               It feels like remembering someone without forcing it, tanpa harus di dramatisir. 
-               Kadang cuma lewat potongan lirik atau nada, terus langsung keinget momen tertentu tanpa sengaja.
+                Lagu ini juga punya vibe yang quiet, tapi bukan kosong. Lebih ke
+                tenang, soft, dan jujur. It feels like remembering someone
+                without forcing it, tanpa harus didramatisir. Kadang cuma lewat
+                potongan lirik atau nada, terus langsung keinget momen tertentu
+                tanpa sengaja.
               </p>
               <p className="leading-7">
-                And maybe that’s why I picked this. Because it feels real. Nggak berisik, nggak berlebihan, tapi tetap ada. 
-                Kayak beberapa hal tentang kamu di kepala aku. Nnggak selalu muncul, tapi sekali datang, rasanya masih sama.
+                And maybe that’s why I picked this. Because it feels real.
+                Nggak berisik, nggak berlebihan, tapi tetap ada. Kayak beberapa
+                hal tentang kamu di kepala aku. Nggak selalu muncul, tapi sekali
+                datang, rasanya masih sama.
               </p>
             </div>
 
@@ -590,9 +598,11 @@ export default function GiftWebsite() {
                 i left the playlist here too.
               </h3>
               <p className="mt-3 leading-7 text-neutral-600">
-                btw, kalau kamu sadar aku buat satu playlist baru buat kamu.
-                kamu inget ga dulu aku suka banget buat playlist buat kamu, buat kita.
-                Terima ya ini playlist buat kita untuk sekarang, kalau engga terima yaudah anggap aja playlist aku buat kamu hehe
+                btw, kalau kamu sadar, aku buat satu playlist baru buat kamu.
+                Kamu inget nggak dulu aku suka banget bikin playlist buat kamu,
+                buat kita. Terima ya, ini playlist buat kita untuk sekarang.
+                Kalau nggak, anggap aja playlist ini aku buat khusus buat kamu
+                hehe.
               </p>
 
               <div className="mt-5 overflow-hidden rounded-[1.5rem] border border-neutral-200 shadow-sm">
@@ -621,8 +631,7 @@ export default function GiftWebsite() {
                 </a>
 
                 <p className="self-center text-sm text-neutral-500">
-                  kalau nggak kebuka di device tertentu, pakai tombol
-                  ini aja.
+                  kalau nggak kebuka di device tertentu, pakai tombol ini aja.
                 </p>
               </div>
             </div>
@@ -650,9 +659,9 @@ export default function GiftWebsite() {
               maybe we were asked to grow first, before life lets us try again.
             </h2>
             <p className="mx-auto mt-4 max-w-2xl leading-7 text-neutral-600">
-              this part tells the story the way i hold it in my head: dari sma,
-              satu kepanitiaan, ldr, toronto, sampai harapan buat ketemu lagi
-              di waktu yang lebih baik.
+              this part tells the story the way i hold it in my head: dari SMA,
+              satu kepanitiaan, LDR, Toronto, sampai harapan buat ketemu lagi di
+              waktu yang lebih baik.
             </p>
           </div>
 
@@ -681,9 +690,7 @@ export default function GiftWebsite() {
             <div
               className={`relative h-[520px] overflow-hidden rounded-[1.75rem] border border-neutral-200 bg-gradient-to-br ${currentScene.theme} transition-all duration-500`}
             >
-              <div
-                className={isDarkScene ? "absolute inset-0 z-10 bg-black/25" : ""}
-              />
+              <div className={isDarkScene ? "absolute inset-0 z-10 bg-black/25" : ""} />
 
               <div className="absolute left-6 top-6 z-20 rounded-full bg-white/90 px-4 py-2 text-xs uppercase tracking-[0.2em] text-rose-400 shadow-sm">
                 scene 0{storyStep + 1}
@@ -693,9 +700,7 @@ export default function GiftWebsite() {
                 {currentScene.subtitle}
               </div>
 
-              <div
-                className={`absolute inset-0 z-0 ${sceneVisible ? "scene-in" : "scene-out"}`}
-              >
+              <div className={`absolute inset-0 z-0 ${sceneVisible ? "scene-in" : "scene-out"}`}>
                 <div className="relative h-full w-full slow-zoom">
                   <Image
                     src={currentScene.image}
@@ -730,8 +735,7 @@ export default function GiftWebsite() {
 
               {storyStep === 7 && (
                 <div className="absolute inset-x-0 bottom-8 z-20 text-center text-sm font-medium text-emerald-700">
-                  aamiin for better timing, better versions, and a beautiful
-                  reunion.
+                  aamiin for better timing, better versions, and a beautiful reunion.
                 </div>
               )}
             </div>
@@ -893,7 +897,8 @@ export default function GiftWebsite() {
               if you have a message buat aku, leave it here.
             </h2>
             <p className="mt-4 leading-7 text-neutral-600">
-             Kalau kamu mau ngomong sesuatu atau mau komen soal web ini, feel free ya buat kontak aku lagi sapa tau lupa nomor aku hehe
+              kalau kamu mau ngomong sesuatu atau mau komen soal web ini, feel
+              free ya buat kontak aku lagi, siapa tahu lupa nomor aku hehe.
             </p>
 
             <div className="mt-8 space-y-4">
@@ -989,55 +994,54 @@ export default function GiftWebsite() {
                 </p>
                 <div className="space-y-5 text-[15px] leading-8 text-neutral-200 md:text-base">
                   <p>
-                    happy birthday. i know this is late, and maybe that already
-                    says a lot about how long i kept thinking about whether i
-                    should make this or just keep everything to myself.
+                    happy birthday ya. i know ini telat, dan mungkin itu udah
+                    cukup ngejelasin berapa lama aku mikir… mau bikin ini atau
+                    keep everything to myself aja.
                   </p>
                   <p>
-                    but i still wanted to leave something here. not because i
-                    expect anything from it, and not because i’m trying to make
-                    the day about me. i just didn’t want your birthday to pass
-                    without at least one real, warm thing from me existing
-                    somewhere.
+                    tapi aku tetap pengen ninggalin sesuatu di sini. bukan
+                    karena aku expect sesuatu dari ini, dan bukan juga karena aku
+                    mau bikin hari kamu jadi tentang aku. aku cuma nggak mau
+                    ulang tahun kamu lewat gitu aja tanpa ada satu hal hangat
+                    dan jujur dari aku.
                   </p>
                   <p>
-                    i hope this year gives you more than the last one did. more
-                    peace, more steady days, more little moments that make life
-                    feel less tiring. i hope things work out for you in ways
-                    that feel almost unfairly kind.
+                    aku harap tahun ini kasih kamu lebih banyak hal baik dari
+                    tahun sebelumnya. lebih banyak tenang, lebih banyak hari
+                    yang ringan, dan lebih banyak hal kecil yang bikin hidup
+                    terasa baik ke kamu.
                   </p>
                   <p>
-                    thank you for once being such a meaningful part of my life.
-                    not just in the obvious way, but in the quiet way too. you
-                    made certain days easier. you made some heavy things feel
-                    lighter than they actually were.
+                    makasih ya, karena pernah jadi bagian yang berarti banget di
+                    hidup aku. bukan cuma di hal-hal besar, tapi juga di hal-hal
+                    kecil yang diam-diam bikin hari aku terasa lebih gampang.
                   </p>
                   <p>
-                    i still think about you sometimes. not all the time, not in
-                    a way that ruins everything, just in the human way. in the
-                    way someone important still shows up in random corners of
-                    your mind because they mattered there first.
+                    aku masih kepikiran kamu kadang-kadang. nggak setiap saat,
+                    nggak juga sampai bikin semuanya berantakan, cuma dalam cara
+                    yang manusiawi. dalam cara di mana seseorang yang pernah
+                    penting akan tetap muncul di sudut-sudut kecil pikiran kita.
                   </p>
                   <p>
-                    i think what i’m trying to say is: i’m not pretending it
-                    all meant less just because it ended. it meant a lot. and
-                    i’m okay admitting that.
+                    dan mungkin itu yang mau aku bilang: aku nggak pura-pura
+                    semuanya jadi kecil cuma karena semuanya udah selesai. it
+                    mattered. a lot. dan aku nggak apa-apa buat ngakuin itu.
                   </p>
                   <p>
-                    i’m also learning that care can change shape. sometimes
-                    it’s no longer closeness. sometimes it’s just wishing
-                    someone well without needing to be part of where they’re
-                    headed next.
+                    sekarang aku juga lagi belajar kalau care itu bisa berubah
+                    bentuk. kadang bukan lagi soal dekat, kadang cuma tentang
+                    tetap berharap yang baik buat seseorang tanpa harus ikut ada
+                    di langkah berikutnya.
                   </p>
                   <p>
-                    so that’s really all this is. a small page, a chosen song,
-                    a few photos, and one honest wish: i hope you’re happy. i
-                    hope life is soft with you. and i hope this year brings you
-                    so many good things that you stop being surprised by them.
+                    jadi ya, sesimpel itu sebenarnya. satu halaman kecil, satu
+                    lagu yang aku pilih, beberapa foto, dan satu harapan yang
+                    tetap sama: semoga kamu bahagia. semoga hidup lembut ke
+                    kamu. dan semoga tahun ini kasih kamu banyak banget hal baik.
                   </p>
                   <p>
-                    you were a beautiful part of my life once. that stays true.
-                    and i think that’s enough for me to say today.
+                    you were once a beautiful part of my life. and that stays
+                    true.
                   </p>
                   <p>happy birthday, again.</p>
                 </div>
