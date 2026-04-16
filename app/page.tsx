@@ -660,7 +660,7 @@ export default function GiftWebsite() {
             </h2>
             <p className="mx-auto mt-4 max-w-2xl leading-7 text-neutral-600">
               this part tells the story the way i hold it in my head: dari SMA,
-              satu kepanitiaan, LDR, Toronto, sampai harapan buat ketemu lagi di
+              satu kepanitiaan, LDR, sampai harapan buat ketemu lagi di
               waktu yang lebih baik.
             </p>
           </div>
@@ -1007,7 +1007,7 @@ export default function GiftWebsite() {
                   </p>
                   <p>
                     aku harap tahun ini kasih kamu lebih banyak hal baik dari
-                    tahun sebelumnya. lebih banyak tenang, lebih banyak hari
+                    tahun sebelumnya. lebih banyak bahagia, lebih banyak hari
                     yang ringan, dan lebih banyak hal kecil yang bikin hidup
                     terasa baik ke kamu.
                   </p>
@@ -1023,7 +1023,7 @@ export default function GiftWebsite() {
                     penting akan tetap muncul di sudut-sudut kecil pikiran kita.
                   </p>
                   <p>
-                    dan mungkin itu yang mau aku bilang: aku nggak pura-pura
+                    dan mungkin itu yang mau aku bilang, aku nggak pura-pura
                     semuanya jadi kecil cuma karena semuanya udah selesai. it
                     mattered. a lot. dan aku nggak apa-apa buat ngakuin itu.
                   </p>
@@ -1036,8 +1036,8 @@ export default function GiftWebsite() {
                   <p>
                     jadi ya, sesimpel itu sebenarnya. satu halaman kecil, satu
                     lagu yang aku pilih, beberapa foto, dan satu harapan yang
-                    tetap sama: semoga kamu bahagia. semoga hidup lembut ke
-                    kamu. dan semoga tahun ini kasih kamu banyak banget hal baik.
+                    tetap sama, semoga kamu bahagia. semoga hidup kamu lebih
+                    baik. dan semoga tahun ini kasih kamu banyak banget hal baik.
                   </p>
                   <p>
                     you were once a beautiful part of my life. and that stays
